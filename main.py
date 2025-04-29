@@ -5,6 +5,9 @@ from scheduler.scheduler import start_scheduler_background
 from subscriptions.manager import load_subscriptions, add_subscription, remove_subscription
 from fetcher.github_api import get_repo_events
 from reporter.generator import generate_report
+from fetcher.github_fetcher import save_daily_progress
+from reporter.daily_reporter import generate_daily_summary
+from llm.openai_client import OpenAIClient
 
 def print_help():
     print("\n=== Welcome to Tech Sentinel (Interactive Mode) ===\n")
@@ -56,7 +59,7 @@ def command_loop():
 
             elif command == "fetch":
                 fetch_and_report()
-
+                
             elif command == "show":
                 subs = load_subscriptions()
                 if not subs:
@@ -95,6 +98,9 @@ def fetch_and_report():
         except Exception as e:
             print(f"[Error] Failed to fetch updates for {repo_url}: {e}")
 
+        markdown_file_path = save_daily_progress(owner, repo)
+        generate_daily_summary(markdown_file_path, openai_client)
+        
     report = generate_report(updates)
     print("\n===== Update Report =====\n")
     print(report)
@@ -106,10 +112,13 @@ def parse_repo_url(repo_url: str):
 def parse_events(events):
     return [f"{event['type']} by {event['actor']['login']}" for event in events]
 
+# 创建 OpenAIClient 实例
+openai_client = OpenAIClient()
+    
 if __name__ == "__main__":
     # 启动Scheduler在后台
     scheduler_thread = threading.Thread(target=start_scheduler_background, daemon=True)
     scheduler_thread.start()
-
+    
     # 启动交互式命令循环
     command_loop()

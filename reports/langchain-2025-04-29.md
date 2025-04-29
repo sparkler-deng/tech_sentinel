@@ -1,0 +1,127 @@
+# Daily Progress Report: langchain-ai/langchain (2025-04-29)
+
+## 🐛 Open Issues
+- [langchain_azure_ai - ImportError: cannot import name 'AsyncCallbackManagerForLLMRun' from 'langchain_core.callbacks'](https://github.com/langchain-ai/langchain/issues/31061) by LucianoPereira
+- [can not extract tables with partition_pdf](https://github.com/langchain-ai/langchain/issues/31053) by JJ-Zhang-DS
+- [tool args descriptions inference cannot handle PEP 563 stringized annotations](https://github.com/langchain-ai/langchain/issues/31051) by iyanging
+- [slow response when calling API](https://github.com/langchain-ai/langchain/issues/31048) by qitao052
+- [Latest chroma (server) release in incompatible with langchain-chroma](https://github.com/langchain-ai/langchain/issues/31047) by andreivladmatei
+- [Pydantic fields with an 'alias' do not get passed to LLM silently](https://github.com/langchain-ai/langchain/issues/31035) by YashalShakti
+- [zhipu interface update](https://github.com/langchain-ai/langchain/issues/31032) by Sword40
+- [Bug when using QianfanLLMEndpoint](https://github.com/langchain-ai/langchain/issues/31029) by ss2lyf
+- [DOC: Max Tokens vs. Max Completions Tokens not clear in ChatOpenAI](https://github.com/langchain-ai/langchain/issues/31024) by bkarduck
+- [When passing api_key and not ad_token, condition takes the empty string of the ad token instead of apo_key](https://github.com/langchain-ai/langchain/issues/31010) by erne2086
+- [`bind_tools` after another `bind` overwrites bound arguments](https://github.com/langchain-ai/langchain/issues/30983) by phschoepf
+- [Langchain create_tool_calling_agent doesn't invoke tools for bedrock llma/mistral but works with anthropic](https://github.com/langchain-ai/langchain/issues/30978) by vikrant-mah-dhimate
+- [Incorrect schema handling when using SQLDatabase with PostgreSQL](https://github.com/langchain-ai/langchain/issues/30976) by plblueraven
+- [PyMuPDFLoader gives 'NoneType' object is not iterable when no password supplied with password protected PDF](https://github.com/langchain-ai/langchain/issues/30972) by nmakhotkin
+- [`Union[Objects]`-typed args raising invalid_function_parameters error in strict mode of OpenAI function calling / structured output](https://github.com/langchain-ai/langchain/issues/30970) by shengbo-ma
+- [browser use cant't recognize a dialog](https://github.com/langchain-ai/langchain/issues/30954) by zhouEva1218
+- [openai.BaseModel reference breaks compatibility with OpenAI SDK >=1.0 in langchain-openai 0.3.14](https://github.com/langchain-ai/langchain/issues/30933) by ChaoTanTestify
+- [PyMuPDF4LLMLoader issue while extracting from multi-column text when horizontal lines are present as a separator of sections](https://github.com/langchain-ai/langchain/issues/30931) by Nayan-000-Kalita
+- [Intermittent LengthFinishReasonError in AzureChatOpenAI](https://github.com/langchain-ai/langchain/issues/30924) by chanjeon-dev
+- [langchain deepseek : depends compatible question with langchain-commnunity because of version with langchain-core](https://github.com/langchain-ai/langchain/issues/30916) by bazingaedward
+- [Tool Call Fails: Constructs Invalid Arguments When The Function Accepts Arguments of Type Dictionary](https://github.com/langchain-ai/langchain/issues/30910) by DebajitKumarPhukan
+- [OpenAICallbackHandler does not have cost information for Open AI 4.1 and o4 models](https://github.com/langchain-ai/langchain/issues/30898) by TonyMas
+- [AIMessage not allowed as structured_output](https://github.com/langchain-ai/langchain/issues/30885) by CodenameReality
+- [`langchain-chroma`: Query filters are extremely restrictive (by type), is this by design??](https://github.com/langchain-ai/langchain/issues/30879) by hesreallyhim
+- [Bug: llm.ainvoke is traced different from llm.invoke (won't be traced)](https://github.com/langchain-ai/langchain/issues/30870) by ionmincu
+- [_get_response from base.py does not return generated file id when running as an agent](https://github.com/langchain-ai/langchain/issues/30851) by georgi-stefanov
+- [AzureCosmosDBNoSqlVectorSearch custom text_key, metadata_key, embedding_key key error](https://github.com/langchain-ai/langchain/issues/30844) by ocesp98
+- [AWS OSS Doc ID and Filter nor working](https://github.com/langchain-ai/langchain/issues/30839) by invinciible
+- [ChatTongyi has the with_stuctured_output method, but it is always None](https://github.com/langchain-ai/langchain/issues/30838) by wyy-holding
+- [Scope Error while trying to use Anthropic Model with GoogleVertex library.](https://github.com/langchain-ai/langchain/issues/30837) by khubo
+- [Remote malicious email injection which leads to control of the agent and forward the user's email](https://github.com/langchain-ai/langchain/issues/30833) by Jr61-star
+- [Improve docs around built-in Google tools](https://github.com/langchain-ai/langchain/issues/30813) by ccurme
+- [AzureCosmosDBVectorSearch: 'vectorContent' error when executing .as_retriever() with no full traceback](https://github.com/langchain-ai/langchain/issues/30801) by mnbenavides
+- [Support recursive tool schemas](https://github.com/langchain-ai/langchain/issues/30797) by ccurme
+- [core: task not awaited in `create_base_retry_decorator`](https://github.com/langchain-ai/langchain/issues/30791) by cbornet
+- [LangChain streaming output, using gpt-4o-mini, o3-mini, o1-mini, gpt-4o and other models streaming output report error unavailable](https://github.com/langchain-ai/langchain/issues/30786) by NanGePlus
+- [Anthropic does not accept only System Messages](https://github.com/langchain-ai/langchain/issues/30764) by mathislindner
+- [langchain-server script ModuleNotFoundError: No module named 'langchain.server'](https://github.com/langchain-ai/langchain/issues/30745) by MickeyPvX
+- [Standardize & Abstract Prompt/Context Caching](https://github.com/langchain-ai/langchain/issues/30875) by rvndbalaji
+- [Multiple response types](https://github.com/langchain-ai/langchain/issues/30725) by Sahil-Gupta584
+- [Re-entering a context manager from `set_config_context` raises `AttributeError` instead of `RuntimeError`](https://github.com/langchain-ai/langchain/issues/30720) by Alioth99
+- [`Graph.draw_png()` silently returns `None` with invalid node types, causing unexpected crash on usage](https://github.com/langchain-ai/langchain/issues/30719) by Alioth99
+- [Value error occurring in langchain_community.vectorstores.pinecone](https://github.com/langchain-ai/langchain/issues/30715) by ccasgar
+- [`langchain_chroma.Chroma` used with `chromadb.AsyncHttpClient`?](https://github.com/langchain-ai/langchain/issues/30704) by khteh
+- [Bug caused by create_react_agent method and runnable asteam_events](https://github.com/langchain-ai/langchain/issues/30708) by deershark
+- [on_llm_new_token gets list of dicts instead of string for Anthropic models](https://github.com/langchain-ai/langchain/issues/30703) by maver1ck
+- [When stream_mode="messages" in langgraph , ChatTongyi raises KeyError: 'reasoning_content'](https://github.com/langchain-ai/langchain/issues/30689) by lyc280705
+- [TypeError: 'GoogleSearchAPIWrapper' object does not support item assignment](https://github.com/langchain-ai/langchain/issues/30674) by probao
+- [Leak when using object member in a RunnableSequence](https://github.com/langchain-ai/langchain/issues/30667) by maxfriedrich
+- [Bug: GitbookLoader fails to process nested sitemaps](https://github.com/langchain-ai/langchain/issues/30629) by andrasfe
+- [DOC: Integrations > Vectorstores > "IDs in add Documents" is inaccurate](https://github.com/langchain-ai/langchain/issues/30622) by hesreallyhim
+- [AgentExecutor call a tool with exact same input again and in again](https://github.com/langchain-ai/langchain/issues/30608) by alex-ber
+- [Segmentation fault (core dumped) - while using Chroma from langchain_chroma](https://github.com/langchain-ai/langchain/issues/30589) by Yash2003Bisht
+- [Inconsistent behavior for `BaseTool` subclasses that return `list` from `_run`/`_arun`](https://github.com/langchain-ai/langchain/issues/30578) by menezesandre
+- [LanceDB query_type: hybrid unable to pass it](https://github.com/langchain-ai/langchain/issues/30575) by rajuptvs
+- [OpenAIEmbeddings not supported openai-like.](https://github.com/langchain-ai/langchain/issues/30574) by ciaoyizhen
+- [DOC: Document how to retrieve log probs for raw LLM](https://github.com/langchain-ai/langchain/issues/30569) by ftelnov
+- [DOC: api-docs `source` link -> source code page `docs` link (anchor) for same function is flakey](https://github.com/langchain-ai/langchain/issues/30552) by hesreallyhim
+
+## 🔀 Open Pull Requests
+- [docs: Pinecone Sparse vectorstore example](https://github.com/langchain-ai/langchain/pull/31066) by simjak
+- [partners: (langchain-deepseek) fix deepseek-r1 always returns an empty `reasoning_content` when reasoning](https://github.com/langchain-ai/langchain/pull/31065) by reatang
+- [community: feat: add partitioned table support with custom filtering in SQL database for sample row](https://github.com/langchain-ai/langchain/pull/31064) by abhishekshingadiya
+- [docs: update LiteLLM integration docs for router migration to langchain-litellm](https://github.com/langchain-ai/langchain/pull/31063) by Akshay-Dongare
+- [openai[patch]: fix getting generation info when streaming with json_schema response format on Azure](https://github.com/langchain-ai/langchain/pull/31062) by jjurm
+- [community: move to separate repo](https://github.com/langchain-ai/langchain/pull/31060) by ccurme
+- [DOCS: `partners/chroma`: Fix documentation around `chroma` query filter syntax](https://github.com/langchain-ai/langchain/pull/31058) by hesreallyhim
+- [docs: Add example notebook for Gel integration](https://github.com/langchain-ai/langchain/pull/31050) by anbuzin
+- [Docs: replace initialize agent with create react agent for google tools](https://github.com/langchain-ai/langchain/pull/31043) by colichar
+- [[Community]: Raise Error when no password is Provided for PyMuPDFParser](https://github.com/langchain-ai/langchain/pull/31039) by keenborder786
+- [Core: Added Warning in case Alias is set for field in Pydantic Model Arg Schema for Tool](https://github.com/langchain-ai/langchain/pull/31036) by keenborder786
+- [text-splitters: fix some import-untyped errors](https://github.com/langchain-ai/langchain/pull/31030) by cbornet
+- [infra: Dependabot configuration to update actions in workflow](https://github.com/langchain-ai/langchain/pull/31026) by ScottBrenner
+- [langchain: use mypy strict checking with exemptions](https://github.com/langchain-ai/langchain/pull/31018) by cbornet
+- [IBM DB2 vector store documentation addition](https://github.com/langchain-ai/langchain/pull/31008) by yiweiHeOSS
+- [docs: updated pinecone example notebook](https://github.com/langchain-ai/langchain/pull/30993) by simjak
+- [core: support `Union` type args in strict mode of OpenAI function calling / structured output](https://github.com/langchain-ai/langchain/pull/30971) by shengbo-ma
+- [docs: improvements to Astra DB pages, especially modernize Vector DB example notebook](https://github.com/langchain-ai/langchain/pull/30961) by hemidactylus
+- [adding docs for vectara tools](https://github.com/langchain-ai/langchain/pull/30958) by adeelehsan
+- [Adding documentation for PGVectorStore](https://github.com/langchain-ai/langchain/pull/30950) by dishaprakash
+- [core: Fix some private member accesses](https://github.com/langchain-ai/langchain/pull/30912) by cbornet
+- [community: Fix HTTP protocol handling in AzureAISearchRetriever._build_search_url](https://github.com/langchain-ai/langchain/pull/30886) by kaspars-strods
+- [community: Remove no-untyped-def escapes](https://github.com/langchain-ai/langchain/pull/30873) by cbornet
+- [Fix async indexing issue](https://github.com/langchain-ai/langchain/pull/30869) by shkarupa-alex
+- [[community] Propose PDFRouterParser and Loader](https://github.com/langchain-ai/langchain/pull/30847) by pprados
+- [[community] Propose some @deprecated APIs for PDF](https://github.com/langchain-ai/langchain/pull/30842) by pprados
+- [langchain: catch if there are only system messages in a prompt for anthropic](https://github.com/langchain-ai/langchain/pull/30822) by mathislindner
+- [community: have ChatLlamaCpp handle "auto" and "any" for tool_choice](https://github.com/langchain-ai/langchain/pull/30810) by clinty
+- [langchain: improve performance split_list_of_docs](https://github.com/langchain-ai/langchain/pull/30808) by ianchi
+- [langchain-openai: support custom fallback content for tool-only messages](https://github.com/langchain-ai/langchain/pull/30803) by louisgthier
+- [Improvements to `ChatPerplexity` Integration ](https://github.com/langchain-ai/langchain/pull/30802) by jamesliounis
+- [core: Cleanup Pydantic models and handle deprecation warnings](https://github.com/langchain-ai/langchain/pull/30799) by cbornet
+- [Add Compass Labs toolkits to langchain docs](https://github.com/langchain-ai/langchain/pull/30794) by scheuclu
+- [community: add ChatLLM7 integration](https://github.com/langchain-ai/langchain/pull/30765) by chigwell
+- [partners: (langchain-huggingface) Chat Models - Integrate Hugging Face Inference Providers and remove deprecated code](https://github.com/langchain-ai/langchain/pull/30733) by hanouticelina
+- [core[patch]: add on_tool_error to _AstreamEventsCallbackHandler](https://github.com/langchain-ai/langchain/pull/30709) by vbarda
+- [community: Add recursive sitemap support to GitbookLoader with concurrent processing](https://github.com/langchain-ai/langchain/pull/30681) by andrasfe
+- [core: Add ruff rules SLF](https://github.com/langchain-ai/langchain/pull/30666) by cbornet
+- [openai: Add skip_tokenization option to OpenAIEmbeddings (Fixes #30574)](https://github.com/langchain-ai/langchain/pull/30662) by ArmaanjeetSandhu
+- [rfc(core): trace tools called in metadata](https://github.com/langchain-ai/langchain/pull/30631) by baskaryan
+- [core: Refactor separate logic](https://github.com/langchain-ai/langchain/pull/30604) by J1W0N-1209
+- [langchain-openai(partners): Append additional keyword parameters or metadata to the message](https://github.com/langchain-ai/langchain/pull/30567) by houxiyao
+- [community: Use Tree Sitter Language Pack for language parser](https://github.com/langchain-ai/langchain/pull/30514) by Lochlanna
+- [community: Fix retrieval node objects](https://github.com/langchain-ai/langchain/pull/30444) by galshubeli
+- [Remove unused Context API](https://github.com/langchain-ai/langchain/pull/30382) by hinthornw
+- [core[patch]: drop redundant chat model trace content](https://github.com/langchain-ai/langchain/pull/30332) by baskaryan
+- [openai[patch]: propagate computer use actions to .tool_calls](https://github.com/langchain-ai/langchain/pull/30329) by ccurme
+- [Community: Add sqldocstore support for ParentChildRetriever](https://github.com/langchain-ai/langchain/pull/30300) by hslee16
+- [text-splitters: Add strict_chunk_size to RecursiveCharacterTextSplitter and chunk_position to TextSplitter](https://github.com/langchain-ai/langchain/pull/30220) by AdeStAff
+- [community[minor]: 07 - Refactoring ZeroxPDFLoader](https://github.com/langchain-ai/langchain/pull/30094) by pprados
+- [core: fix for BaseTool when args_schema has pydantic validators that change the input keys](https://github.com/langchain-ai/langchain/pull/30004) by VMinB12
+- [community[minor]: 06 - Refactoring PDFPlumber](https://github.com/langchain-ai/langchain/pull/29709) by pprados
+- [standard-tests: model param test](https://github.com/langchain-ai/langchain/pull/29595) by efriis
+- [fix(pdf): Fix garbled text in PDF loaders](https://github.com/langchain-ai/langchain/pull/29557) by engkimo
+- [core: Add ruff rules RUF](https://github.com/langchain-ai/langchain/pull/29353) by cbornet
+- [core: Add ruff rules A (builtins shadowing)](https://github.com/langchain-ai/langchain/pull/29312) by cbornet
+- [core:  Fixed inspecting schema issue when working with InjectedToolArg annotations](https://github.com/langchain-ai/langchain/pull/28435) by XiaoConan
+- [core: fix issue with runnable parallel schema being empty when children runnable input schemas use TypedDict's](https://github.com/langchain-ai/langchain/pull/28196) by williamzhu54
+- [core: Allow nested prompt templates](https://github.com/langchain-ai/langchain/pull/28024) by dmenini
+- [core[patch]: make Tool.description optional](https://github.com/langchain-ai/langchain/pull/27759) by baskaryan
+- [core: Modified RunnableWithMessageHistory get_input_schema to make use of the underlying runnable input keys.](https://github.com/langchain-ai/langchain/pull/27619) by Abd-elr4hman
+- [core[patch]: support handle_tool_error=(Exception, ...) tuple](https://github.com/langchain-ai/langchain/pull/27547) by baskaryan
+- [community[patch]: Fix handling of a few integrations that use private attribute](https://github.com/langchain-ai/langchain/pull/27014) by eyurtsev
+- [add async api to draw graph png](https://github.com/langchain-ai/langchain/pull/25399) by eyurtsev

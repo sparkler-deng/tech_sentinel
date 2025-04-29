@@ -125,3 +125,6 @@
 - [core[patch]: support handle_tool_error=(Exception, ...) tuple](https://github.com/langchain-ai/langchain/pull/27547) by baskaryan
 - [community[patch]: Fix handling of a few integrations that use private attribute](https://github.com/langchain-ai/langchain/pull/27014) by eyurtsev
 - [add async api to draw graph png](https://github.com/langchain-ai/langchain/pull/25399) by eyurtsev
+
+## ✅ Commits Today
+- No commits found today.

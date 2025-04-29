@@ -1,6 +1,8 @@
 import threading
 import time
 
+from datetime import datetime
+                    
 from scheduler.scheduler import start_scheduler_background
 from subscriptions.manager import load_subscriptions, add_subscription, remove_subscription
 from fetcher.github_api import get_repo_events
@@ -59,6 +61,31 @@ def command_loop():
 
             elif command == "fetch":
                 fetch_and_report()
+ 
+            elif command.startswith("report "):
+                repo_path = command[7:].strip()
+                try:
+                    if '/' not in repo_path:
+                        raise ValueError("Invalid format. Use 'owner/repo'.")
+                    
+                    owner, repo = repo_path.split("/")
+                    
+                    # Step 1: 保存每日进展
+                    save_daily_progress(owner, repo)
+
+                    # Step 2: 构造日报路径
+                    today = datetime.now().strftime("%Y-%m-%d")
+                    progress_file = f"reports/{repo}-{today}.md"
+
+                    # Step 3: 调用GPT生成总结
+                    client = OpenAIClient()
+                    generate_daily_summary(progress_file, client)
+
+                except ValueError as ve:
+                    print(f"[Error] {ve}")
+                except Exception as e:
+                    print(f"[Error] Failed to generate report for {repo_path}: {e}")
+           
                 
             elif command == "show":
                 subs = load_subscriptions()

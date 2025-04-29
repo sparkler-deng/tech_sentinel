@@ -22,14 +22,22 @@ def generate_daily_summary(markdown_file_path: str, openai_client: OpenAIClient)
         progress_report = file.read()
 
     # 拼接最终 prompt
-    prompt = f"Here is the progress report for {markdown_file_path.split('-')[0]}:\n\n{progress_report}\n\nPlease summarize it concisely and professionally."
+    prompt = (
+        f"Here is the daily progress for {markdown_file_path.split('-')[0]}:\n\n"
+        f"{progress_report}\n\n"
+        "Please summarize all of the following:\n"
+        "- Key open issues\n"
+        "- Notable pull requests\n"
+        "- Commit highlights\n\n"
+        "Organize the report professionally in Markdown."
+    )
 
     # 调用 GPT-4 获取总结
     summary = openai_client.chat(prompt, system_prompt=SYSTEM_PROMPT)
 
     # 构建日报文件名和路径
     today = datetime.now().strftime("%Y-%m-%d")
-    summary_filename = markdown_file_path.replace('.md', f'-summary-{today}.md')
+    summary_filename = markdown_file_path.replace('.md', f'-summary.md')
     
     # 保存生成的正式日报
     with open(summary_filename, "w", encoding="utf-8") as summary_file:
